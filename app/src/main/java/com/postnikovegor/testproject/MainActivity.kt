@@ -1,11 +1,9 @@
 package com.postnikovegor.testproject
 
 import android.content.Context
-import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -70,6 +68,12 @@ class MainActivity : AppCompatActivity() {
             binding.apply {
                 avatarView.visibility = View.VISIBLE
                 Picasso.get().load(user.avatar).into(avatarView)
+
+                username.apply {
+                    visibility = View.VISIBLE
+                    text = user.fullname
+
+                }
             }
             Toast.makeText(context, "Done!", Toast.LENGTH_SHORT)
                 .show()
