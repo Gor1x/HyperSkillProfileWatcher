@@ -69,12 +69,14 @@ class MainActivity : AppCompatActivity() {
         if (user == null) {
             Toast.makeText(context, "Something went wrong, user not loaded", Toast.LENGTH_SHORT)
                 .show()
+            return
         }
-        user!!
         binding.apply {
             if (user.avatar != "") {
                 avatarView.visibility = View.VISIBLE
                 Picasso.get().load(user.avatar).into(avatarView)
+            } else {
+                avatarView.visibility = View.GONE
             }
 
             username.apply {
