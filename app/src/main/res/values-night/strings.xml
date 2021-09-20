@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TestProject</string>
+    <string name="app_name">HyperSkillProfileWatcher</string>
     <string name="an_avatar_of_found_user">An avatar of found user</string>
     <string name="bio_title">Bio</string>
     <string name="experience_title">Experience</string>
