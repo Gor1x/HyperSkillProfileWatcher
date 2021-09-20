@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
+            searchIdButton.requestFocus()
             searchIdButton.setOnClickListener {
                 tryToShowUser(inputIdView.text.toString().toInt())
                 Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_SHORT).show()

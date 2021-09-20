@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F5"
+    android:focusable="true"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:padding="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true"
         tools:context=".MainActivity">
 
         <EditText
@@ -24,7 +25,7 @@
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:labelFor="@id/search_id_button"
-            android:text="1764690"
+            android:text="2"
             app:layout_constraintEnd_toStartOf="@+id/search_id_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
