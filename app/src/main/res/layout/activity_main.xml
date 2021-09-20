@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    android:background="#F4F4F5">
+    android:background="#F4F4F5"
+    android:padding="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
         tools:context=".MainActivity">
 
         <EditText
@@ -22,7 +24,7 @@
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:labelFor="@id/search_id_button"
-            android:text="1283850"
+            android:text="1764690"
             app:layout_constraintEnd_toStartOf="@+id/search_id_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Искать ID"
+            android:text="@string/find_by_id_button_text"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,10 +44,9 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_marginTop="12dp"
-            android:contentDescription="Found User Avatar"
-            android:visibility="visible"
+            android:contentDescription="@string/an_avatar_of_found_user"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_id_view" />
 
@@ -59,7 +60,6 @@
             android:layout_marginBottom="15dp"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:text="Vladimir Klimov"
             android:textColor="#2F2727"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -69,31 +69,37 @@
             app:layout_constraintTop_toBottomOf="@+id/avatar_view" />
 
         <include
+            android:id="@+id/bio_include"
+            layout="@layout/bio_card_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/username"
-            layout="@layout/bio_card_layout" />
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username" />
 
-        <androidx.cardview.widget.CardView
-            app:layout_constraintTop_toBottomOf="@+id/bio_card_view"
+        <include
+            android:visibility="gone"
+            android:id="@+id/user_streaks_include"
+            layout="@layout/user_streaks_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
-                 <TextView
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:text="User streaks:"/>
-                <FrameLayout
-                    android:layout_width=""
-                    android:layout_height=""
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bio_include" />
+
+
+        <include
+            android:id="@+id/gamification_include"
+            layout="@layout/gamification_card_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_streaks_include" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

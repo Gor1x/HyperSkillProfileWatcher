@@ -10,11 +10,11 @@ data class User(
     val fullname: String,
     val gamification: GamificationData,
     @SerializedName("invitation_code") val invitationCode: String,
-    @SerializedName("comments_posted") val commentsPosted: CommentData,
+    @SerializedName("comments_posted") val postedData: PostedData,
     val username: String,
     @SerializedName("selected_tracks") val selectedTracks: List<Int>,
     @SerializedName("completed_tracks") val completedTracks: List<Int>,
-    val country: String,
+    val country: String?,
     val languages: List<String>,
     val experience: String,
     @SerializedName("github_username") val githubUsername: String,
@@ -25,7 +25,7 @@ data class User(
     @SerializedName("discord_id") val discordId: Int
 ) {
 
-    data class CommentData(
+    data class PostedData(
         val comment: Int,
         val hint: Int,
         @SerializedName("useful link") val usefulLink: Int,

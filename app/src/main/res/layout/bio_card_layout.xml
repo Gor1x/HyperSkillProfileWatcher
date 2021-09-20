@@ -1,49 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bio_card_view"
-    android:layout_height="wrap_content"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
+    android:visibility="gone"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_gravity="center_vertical"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="16dp">
 
         <TextView
-            android:layout_height="wrap_content"
+            android:id="@+id/living_place"
             android:layout_width="match_parent"
-            android:text="Lives in RU\nSpeaks English Russian" />
+            android:layout_height="wrap_content" />
 
         <TextView
-            android:layout_height="wrap_content"
+            android:id="@+id/bio_title"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:text="Bio"
+            android:layout_height="wrap_content"
+            android:text="@string/bio_title"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_height="wrap_content"
+            android:id="@+id/bio_text"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:text="Hi, I'm Artyom, a Software Engineer at Miro and an Expert Author at JetBrains Academy.
-I have been contributing to Hyperskill from the very beginning as different roles: an author, a developer, a domain expert.
-I'm here to help learners become confident in programming and learn everything about Java." />
+            android:layout_height="wrap_content" />
 
         <TextView
-            android:layout_height="wrap_content"
+            android:id="@+id/experience_title"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:text="Experience"
+            android:layout_height="wrap_content"
+            android:text="@string/experience_title"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_height="wrap_content"
+            android:id="@+id/experience_text"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:text="I have over 8 years of hands-on development experience using various tech stacks. Even though I see myself as a language-agnostic person, my favorites are Java, Python, and Kotlin, and of these, I have the most experience with Java." />
+            android:layout_height="wrap_content" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.cardview.widget.CardView>
